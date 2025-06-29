@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\registerController;
 
 
 /*
@@ -16,5 +17,8 @@ use App\Http\Controllers\ContactController;
 */
 
 Route::get('/', [ContactController::class, 'index']);
+Route::get('/register', [ContactController::class, 'register']);
 Route::post('/contacts/confirm', [ContactController::class, 'confirm']);
 Route::post('/contacts', [ContactController::class, 'store']);
+Route::post('/login', [registerController::class, 'login']);
+Route::post('/register', [ContactController::class, 'register']);
